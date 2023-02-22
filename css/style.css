@@ -10,6 +10,8 @@
     --fuentePrincipal: 'Staatliches', cursive;
 }
 
+/** Universal **/
+/* El siguiente codigo no deve faltar*/
 html {
     box-sizing: border-box;
     font-size: 62.5%
@@ -18,38 +20,32 @@ html {
     box-sizing: inherit;;
 }
 
-/*globales*/
+/** Globales **/
 body {
     background-color: var(--primario);
     font-size: 1.6rem;
     line-height: 1.5;
 }
-
 p {
     font-size: 1.8rem;
     font-family: Arial, Helvetica, sans-serif;
     color: var(--blanco);
 }
-
-a{
+a {
     text-decoration: none;
 }
-
 img {
     width: 100%;
 }
-
 .contenedor {
     max-width: 120rem;
     margin: 0 auto;
 }
-
 h1, h2, h3 {
     text-align: center;
     color: var(--secundario);
     font-family: var(--fuentePrincipal);
 }
-
 h1 {
     font-size: 4rem;
 }   
@@ -74,15 +70,14 @@ h3 {
     background-color: var(--primarioOscuro);
     padding: 1rem 0;
     margin-top: 2rem;
-
 }
 .footer__texto {
     font-family: var(--fuentePrincipal);
-    font-size: 2.2rem;
     text-align: center;
+    font-size: 2.2rem;
 }
 
-/*Navegacion*/
+/** Navegacion **/
 .navegacion {
     background-color: var(--primarioOscuro);
     padding: 1rem 0;
@@ -95,24 +90,23 @@ h3 {
     color: var(--blanco);
     font-size: 3rem;
 }
-
 .navegacion__enlace--activo,
 .navegacion__enlace:hover {
     color: var(--secundario);
 }
 
-/**Grid**/
+/** Grid **/
 .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 }
 @media (min-width: 768px) {
     .grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
+
 /** Productos **/
 .producto {
     background-color: var(--primarioOscuro);
@@ -133,11 +127,11 @@ h3 {
     line-height: 1.2;
 }
 
-/**Graficos**/
+/** Graficos **/
 .grafico {
     min-height: 30rem;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-size: cover; /*Permite que la imagen rellene su cuadro correspondiente */
     grid-column: 1 / 3;
 }
 .grafico--camisas {
@@ -152,10 +146,11 @@ h3 {
     .grafico--node {
         grid-row: 5 / 6;
         grid-column: 2 / 4;
+        background-image: url(../img/grafico2.jpg);
     }    
 }
 
-/**Nosotros**/
+/** Nosotros **/
 .nosotros {
     display: grid; /*Esto permite poder trabajar la informacion con columnas*/
     grid-template-rows: repeat(2, auto);
@@ -175,7 +170,7 @@ h3 {
     }   
 }
 
-/**Bloques**/
+/** Bloques **/
 .bloques {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -193,7 +188,7 @@ h3 {
     margin: 0;
 }
 
-/**Pagina del producto**/
+/** Pagina Producto **/
 @media (min-width: 768px) {
     .camisa {
         display: grid;
@@ -201,7 +196,6 @@ h3 {
         column-gap: 2rem;
     }
 }
-
 .formulario {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -218,7 +212,7 @@ h3 {
     font-size: 2rem;
     font-family: Arial, Helvetica, sans-serif;
     padding: 1rem;
-    appearance: none;
+    appearance: none; /*Forma de dar estilo a un select*/
 }
 .formulario__submit {
     background-color: var(--secundario);
@@ -232,5 +226,4 @@ h3 {
 .formulario__submit:hover {
     cursor: pointer;
     background-color: var(--secundarioOscuro); /*Esto permite que el boton de agregar en la pagia productos, cambia a un color mas claro al colocar el cursor por encima*/
-
 }
